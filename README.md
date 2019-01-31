@@ -11,11 +11,11 @@
 ### Running  process:
 step1:To run the code user has to install virtual box in the system.User can download `Vagrant` and `VirtualBox` to install and configure Virtual Machine.
 
-Step 2: Use *`vagrant up`* to bring the **virtual machine** online and *vagrant ssh* to **login**.
+Step 2: Use *`vagrant up`* to bring the **virtual machine** online and **vagrant ssh** to **login**.
 
 Step 3: Download the data and Unzip the file in order to extract `_newsdata.sql_`. This file should be inside the Vagrant folder.
 
-Step 4:Dump the database by using the command:* psql -d news -f newsdata.sql*.
+Step 4:Dump the database by using the command:*psql -d news -f newsdata.sql*.
 
 Step-5:Connect to the database by using the command: *psql  news*. And create the views given below qnd exit psql.
 
