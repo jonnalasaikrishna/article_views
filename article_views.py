@@ -8,10 +8,10 @@ def connect(dbname="news"):
         conn = psycopg2.connect("dbname={}".format(dbname))
         cur = conn.cursor()
         return conn, cur
-    except:
-        print("unable to connect to database,please check")
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
 
-
+        
 def query_article():
     """Prints most popular three articles of all time"""
     conn, cur = connect()
