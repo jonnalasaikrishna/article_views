@@ -41,3 +41,27 @@ create view author as select authors.name, count(*) as views from articles inner
 #### errors view:
 create view errors as select date(time) as error_date,round(100.0*sum(case log.status when '404 NOT FOUND' then 1 else 0 end)/count(log.status), 2) as error from log group by error_date;
 
+
+#### Output:
+
+vagrant@vagrant-ubuntu-trusty-64:/vagrant$ python article_views.py
+
+The most popular three articles of all time:
+
+Candidate is jerk, alleges rival --> 338647 views
+Bears love berries, alleges bear --> 253801 views
+Bad things gone, say good people --> 170098 views
+
+The most popular article authors of all time:
+
+Ursula La Multa --> 507594 views
+Rudolf von Treppenwitz --> 423457 views
+Anonymous Contributor --> 170098 views
+Markoff Chaney --> 84557 views
+
+Days with more than 1% of requests lead to errors:
+
+2016-07-17 --> 2.26 %errors
+
+Success!
+
