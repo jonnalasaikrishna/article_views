@@ -11,7 +11,7 @@ def connect(dbname="news"):
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
 
-        
+
 def query_article():
     """Prints most popular three articles of all time"""
     conn, cur = connect()
@@ -49,12 +49,7 @@ def query_errors():
 
 if __name__ == '__main__':
     # uncomment the below code to make views
-    '''
-    view_article()
-    view_authors()
-    view_errors()
-    '''
     query_article()
     query_author()
     query_errors()
-    print "\nSuccess!\n"
+    print("Success!")
